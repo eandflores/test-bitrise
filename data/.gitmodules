@@ -1,0 +1,4 @@
+[submodule "domain"]
+	path = domain
+	url = https://github.com/aimmanager/atlas-shared.git
+

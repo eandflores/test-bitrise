@@ -1,0 +1,143 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    allprojects {
+        repositories {
+            jcenter()
+        }
+    }
+
+    ext {
+        kotlin_version = '1.2.30'
+
+        //Android
+        androidBuildToolsVersion = "27.0.3"
+        androidMinSdkVersion = 19
+        androidTargetSdkVersion = 27
+        androidCompileSdkVersion = 27
+
+        //Default (27.1.1 conflict with android.arch.paging:runtime:1.0.0-beta1)
+        appcompatVersion = '27.1.0'
+
+        //Dagger
+        daggerVersion = '2.11'
+
+        //Butterknife
+        butterKnifeVersion = '8.8.1'
+
+        //Rx
+        rxJavaVersion = '2.0.2'
+        rxAndroidVersion = '2.0.1'
+        javaxAnnotationVersion = '1.0'
+        javaxInjectVersion = '1'
+
+        //Retrofit
+        gsonVersion = '2.3'
+        okHttpVersion = '2.5.0'
+        androidAnnotationsVersion = '21.0.3'
+        arrowVersion = '1.0.0'
+        retrofitVersion = '2.4.0'
+        retrofitRxJavaVersion = '1.0.0'
+        converterGsonVersion = '2.2.0'
+        logginInterceptorVersion = '3.6.0'
+
+        //Testing
+        robolectricVersion = '3.1.1'
+        jUnitVersion = '4.12'
+        assertJVersion = '1.7.1'
+        mockitoVersion = '1.9.5'
+        dexmakerVersion = '1.0'
+        espressoVersion = '3.0.1'
+        testingSupportLibVersion = '0.1'
+        powermockVersion = '1.6.2'
+        runnerVersion = '1.0.1'
+
+        //Development
+        leakCanaryVersion = '1.3.1'
+
+        presentationDependencies = [
+                appcompat:           "com.android.support:appcompat-v7:${appcompatVersion}",
+                recyclerView:        "com.android.support:recyclerview-v7:${appcompatVersion}",
+                daggerCompiler:      "com.google.dagger:dagger-compiler:${daggerVersion}",
+                dagger:              "com.google.dagger:dagger:${daggerVersion}",
+                butterKnifeCompiler: "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+                butterKnife:         "com.jakewharton:butterknife:${butterKnifeVersion}",
+                rxJava:              "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                rxAndroid:           "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                javaxAnnotation:     "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                kotlin:              "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}"
+        ]
+
+        presentationTestDependencies = [
+                mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+                dexmaker:           "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+                dexmakerMockito:    "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+                runner:             "com.android.support.test:runner:${runnerVersion}",
+                espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+                testingSupportLib:  "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
+                junit:              "junit:junit:${jUnitVersion}"
+        ]
+
+        dataDependencies = [
+                daggerCompiler:             "com.google.dagger:dagger-compiler:${daggerVersion}",
+                dagger:                     "com.google.dagger:dagger:${daggerVersion}",
+                okHttp:                     "com.squareup.okhttp:okhttp:${okHttpVersion}",
+                gson:                       "com.google.code.gson:gson:${gsonVersion}",
+                rxJava:                     "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                rxAndroid:                  "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+                javaxAnnotation:            "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+                javaxInject:                "javax.inject:javax.inject:${javaxInjectVersion}",
+                androidAnnotations:         "com.android.support:support-annotations:${androidAnnotationsVersion}",
+                kotlin:                     "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlin_version}",
+                retrofit:                   "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+                retrofitGsonConverter:      "com.squareup.retrofit2:converter-gson:${converterGsonVersion}",
+                retrofitLogginInterceptor:  "com.squareup.okhttp3:logging-interceptor:${logginInterceptorVersion}",
+                retrofitRxJava:             "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:${retrofitRxJavaVersion}"
+        ]
+
+        dataTestDependencies = [
+                junit:              "junit:junit:${jUnitVersion}",
+                assertj:            "org.assertj:assertj-core:${assertJVersion}",
+                mockito:            "org.mockito:mockito-core:${mockitoVersion}",
+                rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+                robolectric:        "org.robolectric:robolectric:${robolectricVersion}",
+
+                powermock:          "org.powermock:powermock-module-junit4:${powermockVersion}",
+                powermockRule:      "org.powermock:powermock-module-junit4-rule:${powermockVersion}",
+                powermockMockito:   "org.powermock:powermock-api-mockito:${powermockVersion}",
+                powermockXstream:   "org.powermock:powermock-classloading-xstream:${powermockVersion}",
+                dexmaker:           "com.google.dexmaker:dexmaker:${dexmakerVersion}",
+                dexmakerMockito:    "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
+                runner:             "com.android.support.test:runner:${runnerVersion}",
+                espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+                testingSupportLib:  "com.android.support.test:testing-support-lib:${testingSupportLibVersion}"
+        ]
+
+        developmentDependencies = [
+                leakCanary: "com.squareup.leakcanary:leakcanary-android:${leakCanaryVersion}",
+        ]
+    }
+
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Theme Gray -->
+    <color name="color_primary">#676b70</color>
+    <color name="color_primary_dark">#8a000000</color>
+    <color name="color_accent">#2962ff</color>
+    <color name="color_toolbar_background">#ffffff</color>
+    <color name="color_toolbar_text">#676b70</color>
+    <color name="color_toolbar_icons">#2962ff</color>
+    <color name="color_snack_bar">#2962ff</color>
+</resources>
