@@ -1,7 +1,7 @@
 # Created by https://www.gitignore.io/api/android,macos
 
 ### Android ###
-# Built application files
+# Built application files 
 *.apk
 *.ap_
 
